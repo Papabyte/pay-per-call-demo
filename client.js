@@ -1,7 +1,6 @@
 const payPerCall = require("pay-per-call");
 const request = require("request");
 const fs = require("fs");
-
 const conf = require("ocore/conf.js");
 const {argv} = require('yargs')
 
