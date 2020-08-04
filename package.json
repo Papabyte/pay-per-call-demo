@@ -1,0 +1,12 @@
+{
+	"name": "ppc-demo-client",
+	"version": "1.0.0",
+	"description": "Per per call demo server",
+	"main": "client.js",
+	"license": "MIT",
+	"dependencies": {
+		"pay-per-call": "git+https://github.com/byteball/pay-per-call-API",
+		"pay-per-call-API": "git+https://github.com/byteball/pay-per-call-API.git",
+		"yargs": "^15.4.1"
+	}
+}
