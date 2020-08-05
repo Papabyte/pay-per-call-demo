@@ -16,7 +16,8 @@ Require nodejs version 8 or higher.
 ### Installation
 
 `git clone https://github.com/byteball/pay-per-call-demo.git`
-`npm run install`
+
+`npm install`
 
 ### Usage
 
@@ -27,7 +28,7 @@ Run the client
 Since it is based on an [headless O<sub>byte</sub> node](https://github.com/byteball/headless-obyte), it will produce a similar output.
 Enter a device name and a passphrase (both optional), then note the `single address` of your client.
 
-Your client has to be funded with some testnet bytes, download the [testnet wallet](https://obyte.org/testnet.html) and get testnet bytes from the faucet chat bot. Then send them to your client's address, after some minutes for confirmation, your client will be ready to request the paid API.
+Your client has to be funded with some testnet bytes, download the [testnet wallet](https://obyte.org/testnet.html) and get testnet bytes from the faucet chat bot. Then send them to your client's address, your client is now ready to request the paid API.
 
 Make a request to the API (the first request may take a few seconds)
 

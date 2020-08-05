@@ -1,4 +1,4 @@
-const payPerCall = require("pay-per-call");
+const payPerCall = require("pay-per-call-API");
 const request = require("request");
 const fs = require("fs");
 const conf = require("ocore/conf.js");
@@ -27,7 +27,10 @@ async function start(){
 		request({
 			url: conf.vendorUrl,
 			method: 'POST',
-			json: objPaymentPackage
+			json: { 
+				payment_package: objPaymentPackage,
+				request: 'get_upcoming_fixtures'
+			}
 		}, async function(error, response) {
 			if (error || response.statusCode !== 200)
 				process.stdout.write(JSON.stringify(error));

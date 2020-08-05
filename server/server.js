@@ -1,5 +1,5 @@
 
-const payPerCall = require("pay-per-call");
+const payPerCall = require("pay-per-call-API");
 const express = require('express')
 const app = express()
 const request = require('request');
@@ -18,12 +18,21 @@ app.post('/', async function(request, response){
 	if (typeof request != 'object' || typeof request.body != 'object')
 		return response.send({ error: "bad request" });
 
-	const objPaymentFromClient = await payPerCallServer.verifyPaymentPackage(request.body);
+	const objPaymentPackageFromClient = request.body.payment_package;
+	const requestFromClient = request.body.request;
+
+	if (typeof objPaymentPackageFromClient != 'object')
+		return response.send({ error: "bad payment package" });
+
+	const objPaymentFromClient = await payPerCallServer.verifyPaymentPackage(objPaymentPackageFromClient);
 	if (objPaymentFromClient.error)
 		return response.send({ error: objPaymentFromClient.error});
 
 	if (objPaymentFromClient.asset != 'base')
 		return refund(objPaymentFromClient.amount, 'only bytes are accepted');
+
+	if (requestFromClient !== 'get_upcoming_fixtures')
+		return refund(objPaymentFromClient.amount, 'unknown request');
 
 	if (objPaymentFromClient.amount > REQUEST_PRICE || objPaymentFromClient.amount < REQUEST_PRICE)
 		return refund(objPaymentFromClient.amount, 'Received ' + objPaymentFromClient.amount + ' but the price is ' + REQUEST_PRICE);
