@@ -47,7 +47,7 @@ async function start(){
 					return process.stdout.write("\nAPI responded with an error: " + response.body.error);
 
 				fs.writeFileSync(conf.fileForDataReceived, JSON.stringify(response.body))
-				process.stdout.write('data received and saved in ' + conf.fileForDataReceived)
+				process.stdout.write('==== data received and saved in ' + conf.fileForDataReceived + '\n')
 			}
 		})
 	}
