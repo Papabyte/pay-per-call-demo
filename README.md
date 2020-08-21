@@ -48,5 +48,10 @@ Close the channel
 `node client --close`
 
 
+### Web dashboard
+
+A web dashboard for channel monitoring can be accessed from your browser at [http://localhost:8080](http://localhost:8080)
+
+![web dashboard](/dashboard.png?raw=true "Client configuration")
 
 

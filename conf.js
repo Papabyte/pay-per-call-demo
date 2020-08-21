@@ -12,3 +12,4 @@ exports.requestPrice = 50000; // in bytes
 exports.depositAmount = 50000*10; // enough to pay for 10 requests
 exports.refillThreshold = 50000*2; // make a new deposit when credit below 2 requests
 exports.fileForDataReceived = './data.json';
+exports.webServerPort = 8080;
