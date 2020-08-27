@@ -11,7 +11,7 @@ start();
 async function start(){
 	console.error("client started");
 	if (argv.close){
-		await payPerCallClient.close();
+		await payPerCallClient.close(true);
 		process.stdout.write("\nChannel closing requested");
 	}
 

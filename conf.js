@@ -4,7 +4,7 @@ exports.bSingleAddress = true;
 
 exports.hub = process.env.testnet ? 'obyte.org/bb-test' : 'obyte.org/bb';
 
-exports.defaultTimeoutInSeconds = 1000; // default timeout for channel creation
+exports.defaultTimeoutInSeconds = 1500; // default timeout for channel creation
 
 exports.vendorUrl = process.env.local_server ? 'http://localhost:5200' : 'http://ppc.papabyte.com';
 exports.vendorAddress = "G6J737PFGXI22ZEVS2SZKJCUWAWY2CNC";
